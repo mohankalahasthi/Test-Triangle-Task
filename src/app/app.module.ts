@@ -3,18 +3,22 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SignupPageComponent } from './modules/auth/signup-page/signup-page.component';
-import { SigninPageComponent } from './modules/auth/signin-page/signin-page.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import { AuthModule } from './modules/auth/auth.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignupPageComponent,
-    SigninPageComponent
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AuthModule,
+    FlexLayoutModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
