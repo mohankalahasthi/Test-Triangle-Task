@@ -1,0 +1,36 @@
+
+.bg{
+    background-color: #ECECEC;
+    padding: 5rem 0;
+}
+.signup-card{
+    max-width: 400px;
+    text-align: center;
+    padding: 50px 24px;
+    margin: auto;
+    box-shadow: 0px 0px 4px 2px #797777;
+}
+::ng-deep .mat-form-field-infix {
+    display: block;
+    position: relative;
+    flex: auto;
+    min-width: 0;
+    width: 320px !important;
+    box-shadow: 0px 1px 3px 1px #797777;
+    background-color: #FAFAFA;
+    margin-top: 15px;
+}
+button{
+    background-color: #3DBCF3;
+    padding: 0px 50px;
+    margin-top: 35px;
+    height: 34px;
+    font-weight: unset;
+    color: white;
+}
+
+a{
+    color: #3DBCF3;
+    margin-left: 3px;
+    text-decoration: none;
+}

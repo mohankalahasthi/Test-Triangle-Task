@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {FormControl, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signin-page',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./signin-page.component.scss']
 })
 export class SigninPageComponent implements OnInit {
-
-  constructor() { }
+  emailFormControl = new FormControl('', [
+    Validators.required,
+    Validators.email,
+  ]);
+  constructor( private router: Router) { }
 
   ngOnInit() {
+    
   }
-
+  signup(){
+    this.router.navigate(['/signup']);
+}
 }

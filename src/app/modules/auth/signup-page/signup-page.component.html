@@ -1,1 +1,52 @@
-<p>signup-page works!</p>
+<section class="bg">
+    <div fxLayoutAlign="center center">
+        <div fxLayout="100">
+          <mat-card class="signup-card">
+            <h2>Get Started</h2>
+            <form [formGroup]="signupForm">
+              <mat-form-field class="example-full-width">
+                <input
+                  matInput
+                  placeholder="Email"
+                  formControlName="email"
+                />
+                <mat-error
+                  *ngIf="
+                  !signupForm.get('email').valid &&
+                    signupForm.get('email').touched
+                  "
+                >
+                  Please enter a valid email address
+                </mat-error>
+                <!-- <mat-error *ngIf="email.hasError('required')">
+                  Email is required
+                </mat-error> -->
+              </mat-form-field>
+              <!-- {{signupForm.valid}} -->
+              <button mat-raised-button (click)="signUpDetails()" [disabled]="!signupForm.valid">Sign Up</button>
+
+            </form>
+            <div class="reg-info">
+              <p>
+                By registering you confirm that you accept the terms and Condition and
+                Privacy policy.
+              </p>
+            </div>
+            <div class="mail-info">
+              <p>
+                If you do not receive conformation email please check your spam folder
+              </p>
+            </div>
+            <div class="signup-info">
+              <p>
+                Are you Recruiter?<span><a (click)="signup()" style="cursor:pointer">Sign Up</a></span>
+              </p>
+              <p>
+                Aready a member?<span><a (click)="signin()" style="cursor:pointer">Log in</a></span>
+              </p>
+            </div>
+          </mat-card>
+        </div>
+      </div>
+    </section>
+

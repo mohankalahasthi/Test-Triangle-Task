@@ -1,1 +1,49 @@
-<p>signin-page works!</p>
+<section class="bg">
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <div fxLayout="100">
+      <mat-card class="signup-card">
+        <h2>Welcome Back</h2>
+        <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <input
+              matInput
+              placeholder="Email"
+              [formControl]="emailFormControl"
+            />
+            <mat-error
+              *ngIf="
+                emailFormControl.hasError('email') &&
+                !emailFormControl.hasError('required')
+              "
+            >
+              Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+              Email is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="password" placeholder="password" />
+          </mat-form-field>
+        </form>
+
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+          <div fxFlex="50">
+            <mat-checkbox class="example-margin" [(ngModel)]="checked"
+              >Stay signed in</mat-checkbox
+            >
+          </div>
+          <div fxFlex="50">
+            <a>Forgot your password ?</a>
+          </div>
+        </div>
+
+        <button mat-raised-button>Log In</button>
+        <p>Don't have an account? <a (click)="signup()" style="cursor: pointer;">Sign Up</a></p>
+      </mat-card>
+    </div>
+  </div>
+</section>
+
+
+

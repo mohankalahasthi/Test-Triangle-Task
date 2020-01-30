@@ -3,11 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
-  { path: "", pathMatch: "full", redirectTo: "auth/signin" },
+  { path: "", pathMatch: "full", redirectTo: "auth/signup" },
   {
     path: "auth",
     loadChildren: "./modules/auth/auth.module#AuthModule",
   },
+ 
 ];
 
 @NgModule({
