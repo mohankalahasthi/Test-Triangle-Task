@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { FnParam } from '@angular/compiler/src/output/output_ast';
+import { Router } from "@angular/router";
+
 
 @Component({
   selector: "app-signup-details-page",
@@ -10,7 +12,7 @@ import { FnParam } from '@angular/compiler/src/output/output_ast';
 export class SignupDetailsPageComponent implements OnInit {
   signupForm: FormGroup;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
     this.signupForm = new FormGroup({
@@ -33,5 +35,8 @@ export class SignupDetailsPageComponent implements OnInit {
 
   submit() {
     console.log(this.signupForm);
+  }
+  dashboard(){
+    this.router.navigate(["/dashboard/homepage"]);
   }
 }

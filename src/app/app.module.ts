@@ -9,8 +9,8 @@ import { NavComponent } from './components/nav/nav.component';
 import { AboutComponent } from './components/about/about.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { FlexLayoutModule } from "@angular/flex-layout";
-
 import { AvailabilityComponent } from './components/availability/availability.component';
+import { DashboardModule } from './modules/dashboard/dashboard.module';
 
 
 @NgModule({
@@ -26,6 +26,7 @@ import { AvailabilityComponent } from './components/availability/availability.co
     BrowserModule,
     AppRoutingModule,
     AuthModule,
+    DashboardModule,
     BrowserAnimationsModule,
     FlexLayoutModule
     

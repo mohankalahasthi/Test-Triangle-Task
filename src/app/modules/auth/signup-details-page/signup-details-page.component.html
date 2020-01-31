@@ -9,23 +9,25 @@
           <label for="username">Username</label>
         </div>
         <div fxFlex="70">
-          <div class="input-field">
-            <input
-              name="username"
-              id="username"
-              type="text"
-              formControlName="username"
-              class="form-control"
-            />
-          </div>
-          <div class="valid-msg">
-            <span
-              *ngIf="
-                !signupForm.get('username').valid &&
-                signupForm.get('username').touched
-              "
-              >please enter username!
-            </span>
+          <div fxLayout="column">
+            <div class="input-field">
+              <input
+                name="username"
+                id="username"
+                type="text"
+                formControlName="username"
+                class="form-control"
+              />
+            </div>
+            <div class="valid-msg">
+              <span
+                *ngIf="
+                  !signupForm.get('username').valid &&
+                  signupForm.get('username').touched
+                "
+                >please enter username!
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -72,6 +74,15 @@
               formControlName="password"
             />
           </div>
+          <div class="valid-msg">
+            <span
+              *ngIf="
+                !signupForm.get('password').valid &&
+                signupForm.get('password').touched
+              "
+              >please enter valid password
+            </span>
+          </div>
         </div>
       </div>
     </div>
@@ -90,6 +101,15 @@
               formControlName="confirmPassword"
             />
           </div>
+          <div class="valid-msg">
+            <span
+              *ngIf="
+                !signupForm.get('confirmPassword').valid &&
+                signupForm.get('confirmPassword').touched
+              "
+              >please enter valid password
+            </span>
+          </div>
         </div>
       </div>
     </div>
@@ -105,8 +125,17 @@
               name="displayName"
               id="displayName"
               type="text"
-              formControlName="confirmPassword"
+              formControlName="displayName"
             />
+          </div>
+          <div class="valid-msg">
+            <span
+              *ngIf="
+                !signupForm.get('displayName').valid &&
+                signupForm.get('displayName').touched
+              "
+              >Please Enter Displayname
+            </span>
           </div>
         </div>
       </div>
@@ -126,18 +155,36 @@
               placeholder="First"
               formControlName="firstName"
             />
+            <!-- <div class="valid-msg">
+                <span
+                  *ngIf="
+                    !signupForm.get('firstName').valid &&
+                    signupForm.get('firstName').touched
+                  "
+                  >please Enter Firstname
+                </span>
+              </div> -->
           </div>
         </div>
         <div fxFlex="35">
           <div class="input-field">
             <input
               name="lastName"
-              id="LlstName"
+              id="LastName"
               type="text"
               placeholder="Last"
               formControlName="lastName"
             />
           </div>
+          <!-- <div class="valid-msg">
+            <span
+              *ngIf="
+                !signupForm.get('lastName').valid &&
+                signupForm.get('lastName').touched
+              "
+              >please Enter lastName
+            </span>
+          </div> -->
         </div>
       </div>
     </div>
@@ -156,6 +203,15 @@
               formControlName="nickName"
             />
           </div>
+           <div class="valid-msg">
+                <span
+                  *ngIf="
+                    !signupForm.get('nickName').valid &&
+                    signupForm.get('nickName').touched
+                  "
+                  >please Enter Nickname
+                </span>
+              </div>
         </div>
       </div>
     </div>
@@ -174,17 +230,26 @@
               formControlName="website"
             />
           </div>
+          <div class="valid-msg">
+            <span
+              *ngIf="
+                !signupForm.get('website').valid &&
+                signupForm.get('website').touched
+              "
+              >please Enter website
+            </span>
+          </div>
         </div>
       </div>
     </div>
-    
+
     <div class="form-group">
       <div fxFlex="row" fxLayoutAlign="center center">
         <div fxLayout="30">
           <label for="bio">Bio</label>
         </div>
         <div fxFlex="70">
-          <div class="input-field">
+          <div>
             <textarea
               name="bio"
               id="bio"
@@ -192,7 +257,7 @@
               cols="49"
               formControlName="bioDescription"
             ></textarea>
-          </div>
+        </div>
         </div>
       </div>
     </div>
@@ -210,6 +275,15 @@
               type="text"
               formControlName="jabber"
             />
+          </div>
+          <div class="valid-msg">
+            <span
+              *ngIf="
+                !signupForm.get('jabber').valid &&
+                signupForm.get('jabber').touched
+              "
+              >please Enter Jabber
+            </span>
           </div>
         </div>
       </div>
@@ -229,6 +303,15 @@
               formControlName="aolIm"
             />
           </div>
+          <div class="valid-msg">
+            <span
+              *ngIf="
+                !signupForm.get('aolIm').valid &&
+                signupForm.get('aolIm').touched
+              "
+              >please Enter AOL IM
+            </span>
+          </div>
         </div>
       </div>
     </div>
@@ -247,6 +330,15 @@
               formControlName="yahooIm"
             />
           </div>
+          <div class="valid-msg">
+            <span
+              *ngIf="
+                !signupForm.get('yahooIm').valid &&
+                signupForm.get('yahooIm').touched
+              "
+              >please Enter Yahoo IM
+            </span>
+          </div>
         </div>
       </div>
     </div>
@@ -254,8 +346,14 @@
     <div>
       <div fxFlex="row" fxLayoutAlign="center center">
         <div fxLayout="50">
-          <button mat-raised-button color="primary" type="submit">
-            submit
+          <button
+            [disabled]="!signupForm.valid"
+            mat-raised-button
+            color="primary"
+            type="submit"
+            (click)="dashboard()"
+          >
+            CREATE AND ACCESS
           </button>
         </div>
       </div>
@@ -263,11 +361,3 @@
   </form>
 </div>
 
-<!-- <div fxFlex="row wrap" fxLayoutAlign="center center">
-        <div fxFlex="10">
-            <label>Name</label>
-        </div>
-        <div  fxFlex="20">
-            <input type="text">
-        </div>
-    </div> -->
