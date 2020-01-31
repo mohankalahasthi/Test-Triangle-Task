@@ -1,1 +1,273 @@
-<p>signup-details-page works!</p>
+<div fxLayoutAlign="center center">
+  <h2>Create User</h2>
+</div>
+<div fxLayoutAlign="center center">
+  <form [formGroup]="signupForm" (ngSubmit)="submit()">
+    <div class="form-group">
+      <div fxFlex="row" fxLayoutAlign="center center">
+        <div fxFlex="30">
+          <label for="username">Username</label>
+        </div>
+        <div fxFlex="70">
+          <div class="input-field">
+            <input
+              name="username"
+              id="username"
+              type="text"
+              formControlName="username"
+              class="form-control"
+            />
+          </div>
+          <div class="valid-msg">
+            <span
+              *ngIf="
+                !signupForm.get('username').valid &&
+                signupForm.get('username').touched
+              "
+              >please enter username!
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div fxFlex="row" fxLayoutAlign="center center">
+        <div fxFlex="30">
+          <label for="email">Email</label>
+        </div>
+        <div fxFlex="70">
+          <div class="input-field">
+            <input
+              name="email"
+              id="email"
+              type="email"
+              formControlName="email"
+            />
+          </div>
+          <div class="valid-msg">
+            <span
+              *ngIf="
+                !signupForm.get('email').valid &&
+                signupForm.get('email').touched
+              "
+              >please enter valid email!
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div fxFlex="row" fxLayoutAlign="center center">
+        <div fxFlex="30">
+          <label for="Password">Password</label>
+        </div>
+        <div fxFlex="70">
+          <div class="input-field">
+            <input
+              name="Password"
+              id="Password"
+              type="password"
+              formControlName="password"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div fxFlex="row" fxLayoutAlign="center center">
+        <div fxFlex="30">
+          <label for="confirmPassword">Confirm Password</label>
+        </div>
+        <div fxFlex="70">
+          <div class="input-field">
+            <input
+              name="confirmPassword"
+              id="confirmPassword"
+              type="password"
+              formControlName="confirmPassword"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div fxFlex="row" fxLayoutAlign="center center">
+        <div fxFlex="30">
+          <label for="displayName">Display Name</label>
+        </div>
+        <div fxFlex="70">
+          <div class="input-field">
+            <input
+              name="displayName"
+              id="displayName"
+              type="text"
+              formControlName="confirmPassword"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div fxFlex="row" fxLayoutAlign="center center">
+        <div fxLayout="30">
+          <label for="firstName">Name</label>
+        </div>
+        <div fxFlex="35">
+          <div class="input-field">
+            <input
+              name="firstName"
+              id="firstName"
+              type="text"
+              placeholder="First"
+              formControlName="firstName"
+            />
+          </div>
+        </div>
+        <div fxFlex="35">
+          <div class="input-field">
+            <input
+              name="lastName"
+              id="LlstName"
+              type="text"
+              placeholder="Last"
+              formControlName="lastName"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div fxFlex="row" fxLayoutAlign="center center">
+        <div fxLayout="30">
+          <label for=" nickname">Nickame</label>
+        </div>
+        <div fxFlex="70">
+          <div class="input-field">
+            <input
+              name="nickname"
+              id="nickname"
+              type="text"
+              formControlName="nickName"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div fxFlex="row" fxLayoutAlign="center center">
+        <div fxLayout="30">
+          <label for="Website">Website</label>
+        </div>
+        <div fxFlex="70">
+          <div class="input-field">
+            <input
+              name="Website"
+              id="Website"
+              type="text"
+              formControlName="website"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <div fxFlex="row" fxLayoutAlign="center center">
+        <div fxLayout="30">
+          <label for="bio">Bio</label>
+        </div>
+        <div fxFlex="70">
+          <div class="input-field">
+            <textarea
+              name="bio"
+              id="bio"
+              rows="4"
+              cols="49"
+              formControlName="bioDescription"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div fxFlex="row" fxLayoutAlign="center center">
+        <div fxLayout="30">
+          <label for="jabber">Jabber</label>
+        </div>
+        <div fxFlex="70">
+          <div class="input-field">
+            <input
+              name="jabber"
+              id="jabber"
+              type="text"
+              formControlName="jabber"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div fxFlex="row" fxLayoutAlign="center center">
+        <div fxLayout="30">
+          <label for="aolIm">AOL IM</label>
+        </div>
+        <div fxFlex="70">
+          <div class="input-field">
+            <input
+              name="aolIm"
+              id="aolIm"
+              type="text"
+              formControlName="aolIm"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div fxFlex="row" fxLayoutAlign="center center">
+        <div fxLayout="30">
+          <label for="yahooIm">Yahoo IM</label>
+        </div>
+        <div fxFlex="70">
+          <div class="input-field">
+            <input
+              name="yahooIm"
+              id="yahooIm"
+              type="text"
+              formControlName="yahooIm"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div fxFlex="row" fxLayoutAlign="center center">
+        <div fxLayout="50">
+          <button mat-raised-button color="primary" type="submit">
+            submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- <div fxFlex="row wrap" fxLayoutAlign="center center">
+        <div fxFlex="10">
+            <label>Name</label>
+        </div>
+        <div  fxFlex="20">
+            <input type="text">
+        </div>
+    </div> -->
