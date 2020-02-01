@@ -11,7 +11,7 @@ import { Router } from "@angular/router";
 })
 export class SignupDetailsPageComponent implements OnInit {
   signupForm: FormGroup;
-
+  loginNav:any;
   constructor(private router: Router) {}
 
   ngOnInit() {
@@ -35,8 +35,9 @@ export class SignupDetailsPageComponent implements OnInit {
 
   submit() {
     console.log(this.signupForm);
-  }
-  dashboard(){
     this.router.navigate(["/dashboard/homepage"]);
+    this.loginNav = sessionStorage.setItem('userIsLogged', 'true');
+    let userKey = sessionStorage.getItem('userIsLogged')
+    console.log(userKey);
   }
 }
