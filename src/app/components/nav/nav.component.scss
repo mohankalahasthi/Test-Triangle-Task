@@ -16,3 +16,105 @@ a{
     color: white;
     font-size: 20px;
 }
+
+.fixed-menu-icon {
+    display: block;
+    align-items: center;
+    z-index: 99;
+    height: 60px;
+    top: 11px;
+    left: 16px;
+    position: relative;
+    width: 1em;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+    z-index: 9;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05) !important;
+}
+
+.app-name {
+    margin-left: 8px;
+}
+
+.sidenav-container {
+    /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+         causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+    flex: 1;
+}
+
+.is-mobile .sidenav-container {
+    /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+         `<body>` to be our scrolling element for mobile layouts. */
+    flex: 1 0 auto;
+}
+
+.is-hide {
+    display: none !important;
+}
+
+.active-link {
+    // color: darkgreen !important;
+    // background-color: black !important;
+    // color: white !important;
+    color: white !important;
+    border-radius: 6px; // width: 90%;
+    // margin-left: 4px;
+    margin: 6px;
+}
+
+.active-link a {
+    font-size: 13px !important;
+}
+
+.mat-toolbar {
+    height: 68px !important;
+}
+.nav{
+    background-color: #2A3A4A;
+    color: white;
+    h3{
+        margin-left: 10px;
+        margin-top: 5px;
+    }
+    span{
+        color: #3DBCF3;
+    }
+}
+
+.activeIcon{
+    background-color: #3DBCF3;
+    height: 35px;
+    width: 100%;
+    color: white;
+    font-size: 27px;
+    margin-top: 10px;
+    padding: 12px 0px 5px 20px;
+}
+.normalIcon{
+    height: 35px;
+    width: 100%;
+    color: #D8D8D8;
+    font-size: 27px;
+    margin-top: 1px;
+    padding: 12px 0px 5px 20px;
+}
+.normalIcon:hover{
+    background-color: #3DBCF3;
+    color: white;
+}
+.profile-avatar{
+    padding: 0px 10px 18px;
+    font-size: 45px;
+    color: skyblue;
+}

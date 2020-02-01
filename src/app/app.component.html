@@ -1,2 +1,2 @@
-<app-nav *ngIf="!userKey == true"></app-nav>
+<app-nav [sessionUser]="sessionUser"  (outputEvent)="outputEvent($event)"></app-nav>
 <router-outlet></router-outlet>

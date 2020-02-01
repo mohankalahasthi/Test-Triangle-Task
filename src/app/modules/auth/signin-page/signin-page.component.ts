@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
-
+import {CommonService} from './.././../../services/common.service'
 @Component({
   selector: 'app-signin-page',
   templateUrl: './signin-page.component.html',
@@ -12,12 +12,15 @@ export class SigninPageComponent implements OnInit {
     Validators.required,
     Validators.email,
   ]);
-  constructor( private router: Router) { }
+  constructor( private router: Router, private commonService : CommonService) {
+    sessionStorage.clear();
+    sessionStorage.removeItem('isUserLogged');
+    this.commonService.sessionUserEmit(null);
+   }
 
   ngOnInit() {
-    
   }
-  signup(){
+  signup() {
     this.router.navigate(['/signup']);
 }
 }

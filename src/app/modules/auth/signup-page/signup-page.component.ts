@@ -1,11 +1,11 @@
-import { Component, OnInit } from "@angular/core";
-import { FormControl, Validators, FormGroup } from "@angular/forms";
-import { Router } from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: "app-signup-page",
-  templateUrl: "./signup-page.component.html",
-  styleUrls: ["./signup-page.component.scss"]
+  selector: 'app-signup-page',
+  templateUrl: './signup-page.component.html',
+  styleUrls: ['./signup-page.component.scss']
 })
 export class SignupPageComponent implements OnInit {
   signupForm = new FormGroup({
@@ -24,15 +24,15 @@ export class SignupPageComponent implements OnInit {
   // ]);
 
   signin() {
-    this.router.navigate(["/signin"]);
+    this.router.navigate(['/signin']);
   }
   signup() {
-    this.router.navigate(["/signup"]);
+    this.router.navigate(['/signup']);
   }
   signUpDetails() {
     console.log(this.signupForm);
-    if(this.signupForm.controls.email.value) {
-      this.router.navigate(["/signupdetails", this.signupForm.controls.email.value]);
+    if (this.signupForm.controls.email.value) {
+      this.router.navigate(['/signupdetails', this.signupForm.controls.email.value]);
 
     }
   }
