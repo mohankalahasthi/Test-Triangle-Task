@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router, ActivatedRoute, NavigationExtras } from '@angular/router';
-import { Observable, AsyncSubject, Subject, BehaviorSubject } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 @Injectable({
     // tslint:disable-next-line: quotemark
@@ -9,7 +9,7 @@ import { Observable, AsyncSubject, Subject, BehaviorSubject } from 'rxjs';
 export class CommonService {
 
     // tslint:disable-next-line: variable-name
-    private _sessionUserSubject: Subject<any> = new Subject();
+    private _sessionUserSubject: BehaviorSubject<any> = new BehaviorSubject(null);
     constructor(private router: Router, private route: ActivatedRoute) {}
 
     sessionUserEmit(sessionUser: any) {

@@ -1,16 +1,4 @@
-<div *ngIf="!sessionUser">
-  <div fxFlex="100" class="bg">
-    <div fxLayout="row" fxLayoutAlign="space-around center">
-      <div class="logo">
-        <h2>Contract <span>Portal</span></h2>
-      </div>
-      <div>
-        <a>Terms of Service | Privacy Policy</a>
-      </div>
-    </div>
-  </div>
-</div>
-<div *ngIf="sessionUser">
+<!-- <div *ngIf="sessionUser"> -->
   <div
     class="container"
     [class.is-mobile]="mobileQuery.matches"
@@ -26,7 +14,7 @@
         [fixedInViewport]="mobileQuery.matches"
         fixedTopGap="56"
         [opened]="sessionUser && !mobileQuery.matches"
-        style="width: 70px; cursor: pointer;  background-color: #2A3A4A;"
+        style="width: 70px; cursor: pointer;  background-color: #2A3A4A; "
         class="app-bg"
       >
         <div
@@ -37,28 +25,6 @@
         </div>
 
         <mat-nav-list *ngIf="sessionUser">
-          <!-- <ng-template ngFor let-item [ngForOf]="menuList" let-index="index">
-                        <div
-                            fxLayout="row wrap"
-                            fxLayoutAlign="center"
-                            [class.active-link]="item.id == acitveLink || index == acitveLink"
-                            [class.accent-bg]="item.id == acitveLink || index == acitveLink"
-                            class="padding-one-tb "
-                            (click)="redirect(item)"
-                            style="transition: all 400ms linear;"
-                        >
-                            <a>
-                                <mat-icon
-                                    fxFlex="100"
-                                    svgIcon="icon:{{ item.menu }}"
-                                    style="position: relative;left: 0px; height: 24px;
-                    width: 40px;color: white"
-                                ></mat-icon>
-                            </a>
-    
-                            <a fxFlex="100" style="font-size: 12px;margin-top: 6px;color: white;text-align: center" fxLayoutAlign="center center"> {{ item.name }}</a>
-                        </div>
-                    </ng-template> -->
           <mat-icon class="activeIcon">view_quilt</mat-icon>
           <mat-icon class="normalIcon">search</mat-icon>
           <mat-icon class="normalIcon">account_circle</mat-icon>
@@ -70,36 +36,50 @@
         </mat-nav-list>
       </mat-sidenav>
       <mat-sidenav-content>
-        <mat-toolbar class="mat-elevation-z1 nav">
+        <mat-toolbar class="mat-elevation-z1 nav" *ngIf="sessionUser">
           <div fxLayout="row" fxFlex="100">
-            <div fxFlex="60" fxLayoutAlign="start start" >
-                <div fxLayout="row">
-                    <div>
-                      <button mat-icon-button (click)="snav.toggle()">
-                        <mat-icon>menu</mat-icon>
-                      </button>
-                    </div>
-                    <div>
-                      <h3>Contract<span> Portal</span></h3>
-                    </div>
-                  </div>
+            <div fxFlex="60" fxLayoutAlign="start start">
+              <div fxLayout="row">
+                <div>
+                  <button mat-icon-button (click)="snav.toggle()">
+                    <mat-icon>menu</mat-icon>
+                  </button>
+                </div>
+                <div>
+                  <h3>Contract<span> Portal</span></h3>
+                </div>
+              </div>
             </div>
-            <div fxFlex="40" fxLayout="row"fxLayoutAlign="end end">
+            <div fxFlex="40" fxLayout="row" fxLayoutAlign="end end">
+              <mat-icon class="profile-avatar">account_circle</mat-icon>
 
-                <mat-icon class="profile-avatar">account_circle</mat-icon>
-
-              <button mat-button [matMenuTriggerFor]="appMenu">User Name</button>
+              <button mat-button [matMenuTriggerFor]="appMenu">
+                User Name
+              </button>
               <mat-menu #appMenu="matMenu">
                 <button mat-menu-item>User Preferences</button>
+                <button mat-menu-item>Account Settings</button>
                 <button mat-menu-item (click)="signout()">Signout</button>
               </mat-menu>
             </div>
           </div>
         </mat-toolbar>
+        <div *ngIf="!sessionUser">
+          <div fxFlex="100" class="bg">
+            <div fxLayout="row" fxLayoutAlign="space-around center">
+              <div class="logo">
+                <h2>Contract <span>Portal</span></h2>
+              </div>
+              <div>
+                <a>Terms of Service | Privacy Policy</a>
+              </div>
+            </div>
+          </div>
+        </div>
         <span>
           <router-outlet #o="outlet"></router-outlet>
         </span>
       </mat-sidenav-content>
     </mat-sidenav-container>
   </div>
-</div>
+<!-- </div> -->

@@ -118,3 +118,6 @@ a{
     font-size: 45px;
     color: skyblue;
 }
+::ng-deep .mat-drawer-inner-container{
+    overflow: hidden ;
+}

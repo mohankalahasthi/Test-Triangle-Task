@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
     this.commonService
       .sessionUserEvent()
       .subscribe($event => {
+        console.log($event)
         this.sessionUserEvent($event);
       });
   }

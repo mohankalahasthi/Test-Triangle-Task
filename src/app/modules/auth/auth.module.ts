@@ -9,13 +9,22 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { SignupDetailsPageComponent } from "./signup-details-page/signup-details-page.component";
 
 const routes: Routes = [
-  { path: "", component: SignupPageComponent },
-  { path: "signin", component: SigninPageComponent },
+  { 
+    path: "", 
+    component: SignupPageComponent 
+  },
+  { 
+    path: "signin", 
+    component: SigninPageComponent 
+  },
   {
     path: "signup",
     component: SignupPageComponent
   },
-  { path: "signupdetails/:id", component: SignupDetailsPageComponent }
+  { 
+    path: "signupdetails/:id", 
+    component: SignupDetailsPageComponent 
+  }
 ];
 
 @NgModule({

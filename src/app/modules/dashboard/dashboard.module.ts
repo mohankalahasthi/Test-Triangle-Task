@@ -9,8 +9,7 @@ import { MaterialModule } from '../material/material.module';
 const routes: Routes = [
   {
     path: 'homepage' , component: HomePageComponent
-  },
-
+  }
 ];
 
 @NgModule({
