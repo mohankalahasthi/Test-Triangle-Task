@@ -15,9 +15,7 @@ export class CommonService {
     sessionUserEmit(sessionUser: any) {
         this._sessionUserSubject.next(sessionUser);
     }
-
     sessionUserEvent(): Observable<any> {
         return this._sessionUserSubject.asObservable();
     }
-
 }
